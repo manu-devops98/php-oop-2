@@ -32,7 +32,7 @@ class User
      *
      * @return  self
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         if (!is_string($name)) {
             throw new Exception('Nome non valido');
@@ -75,7 +75,7 @@ class User
      *
      * @return  self
      */
-    public function setAge(int $age)
+    public function setAge($age)
     {
         if (!is_int($age)) {
             throw new Exception('Inserire età corretta!');
