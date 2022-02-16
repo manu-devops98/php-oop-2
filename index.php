@@ -4,10 +4,13 @@ Provate a far interagire tra di loro gli oggetti: ad esempio, l’utente dello s
 
 <?php
 require_once __DIR__ . "/classes/User.php";
+require_once __DIR__ . "/classes/Product.php";
 
 try {
     $user1 = new User('Manuel', 'Cappello', 'abchegdj@mail.com');
-    echo $user1->getName();
+    // echo $user1->getName();
+    $product1 = new Product('Cuffie Sony', 139.99, 3, 'Musica');
+    echo $product1->getPrice();
 } catch (Exception $error) {
     echo $error->getMessage();
 }

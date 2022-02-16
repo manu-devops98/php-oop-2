@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../traits/Premium.php";
 class User
 {
     protected $name;
@@ -7,6 +8,7 @@ class User
     protected $number;
     protected $mail;
     protected $shoppingCart = [];
+    protected $totalShopping = 0;
 
     public function __construct($name, $lastname, $mail)
     {
@@ -141,6 +143,26 @@ class User
     public function setShoppingCart(array $shoppingCart)
     {
         $this->shoppingCart = $shoppingCart;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of totalShopping
+     */
+    public function getTotalShopping()
+    {
+        return $this->totalShopping;
+    }
+
+    /**
+     * Set the value of totalShopping
+     *
+     * @return  self
+     */
+    public function setTotalShopping($totalShopping)
+    {
+        $this->totalShopping = $totalShopping;
 
         return $this;
     }
