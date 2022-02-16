@@ -4,13 +4,15 @@ Provate a far interagire tra di loro gli oggetti: ad esempio, l’utente dello s
 
 <?php
 require_once __DIR__ . "/classes/User.php";
+require_once __DIR__ . "/classes/Premium.php";
 require_once __DIR__ . "/classes/Product.php";
 
 try {
-    $user1 = new User('Manuel', 'Cappello', 'abchegdj@mail.com');
-    // echo $user1->getName();
+    $user1 = new Premium('Manuel', 'Cappello', 'abchegdj@mail.com', new Card('Manuel', 1817654, '05/2025', 765), true);
     $product1 = new Product('Cuffie Sony', 139.99, 3, 'Musica');
-    echo $product1->getPrice();
+    $priceTotal = $product1->getPrice() * ((100 - $user1->getSconto()) / 100);
+    echo $priceTotal;
+    // echo $user1->getSconto();
 } catch (Exception $error) {
     echo $error->getMessage();
 }

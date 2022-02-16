@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../traits/Premium.php";
+require_once __DIR__ . "/Card.php";
 class User
 {
     protected $name;
@@ -7,6 +7,7 @@ class User
     protected $age;
     protected $number;
     protected $mail;
+    protected $card;
     protected $shoppingCart = [];
     protected $totalShopping = 0;
 
@@ -163,6 +164,26 @@ class User
     public function setTotalShopping($totalShopping)
     {
         $this->totalShopping = $totalShopping;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of card
+     */
+    public function getCard()
+    {
+        return $this->card;
+    }
+
+    /**
+     * Set the value of card
+     *
+     * @return  self
+     */
+    public function setCard(Card $card)
+    {
+        $this->card = $card;
 
         return $this;
     }
